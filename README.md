@@ -1,2 +1,2 @@
 # DSA
- Data structure implementation in Python
+ Implementation & Problems regarding Data Structure & Algorithms
