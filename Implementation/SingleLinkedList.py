@@ -82,22 +82,10 @@ class SingleLinkedList():
         return '<%s %r>' % (self.__class__.__name__, self.__tolist())
 
     def get_node(self, index) -> Union[Node, None]:
-        node = self.node
-        for i in range(0, index):
-            if node.next != None:
-                node = node.next
-            else:
-                raise IndexError('LinkedList index out of range')
-        return node
+        return self.__tolist()[index]
 
     def get_last_node(self) -> Node:
-        node = self.node
-        if node != None:
-            while node.next != None:
-                node = node.next
-            return node
-        else:
-            return node
+        return self.__tolist()[-1]
 
     def append(self, data):
         node = self.get_last_node()
@@ -110,17 +98,19 @@ class SingleLinkedList():
     def add(self, data, index):
         node = self.get_node(index-1)
         node.next = Node(data=data, next=node.next)
-    def add_start(self,data):
-        node=self.get_node(0)
-        self.node=Node(data,node)
+
+    def add_start(self, data):
+        node = self.get_node(0)
+        self.node = Node(data, node)
         return None
+
     def __tolist(self):
         nodes = []
         node = self.node
         while(node != None):
             nodes.append(node)
             node = node.next
-        return nodes
+        return [None]if len(nodes)==0 else nodes
 
     def tolist(self):
         nodes = []
@@ -129,3 +119,11 @@ class SingleLinkedList():
             nodes.append(node.data)
             node = node.next
         return nodes
+    def delete(self,index):
+        prev_node=self.get_node(index-1)
+        prev_node.next=prev_node.next.next
+    def pop(self):
+        a=self.get_node(-2)
+        a.next=None
+    def delete_start(self):
+        self.node=self.get_node(1)
