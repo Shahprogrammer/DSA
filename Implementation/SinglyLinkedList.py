@@ -63,7 +63,7 @@ class Node():
         self._next = next
 
 
-class SingleLinkedList():
+class SinglyLinkedList():
     """
     Generates a Single Linked List
 
