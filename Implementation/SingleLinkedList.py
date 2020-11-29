@@ -19,6 +19,9 @@ class Node():
         self._data = data
         self._next = next
 
+    def __repr__(self) -> str:
+        return '<%s %r>' % (self.__class__.__name__, self.data)
+
     @property
     def data(self) -> Any:
         """
@@ -75,6 +78,9 @@ class SingleLinkedList():
         """
         self.node = node
 
+    def __repr__(self) -> str:
+        return '<%s %r>' % (self.__class__.__name__, self.__tolist())
+
     def get_node(self, index) -> Union[Node, None]:
         node = self.node
         for i in range(0, index):
@@ -105,3 +111,19 @@ class SingleLinkedList():
     def add(self, data, index):
         node = self.get_node(index-1)
         node.next = Node(data=data, next=node.next)
+
+    def __tolist(self):
+        nodes = []
+        node = self.node
+        while(node != None):
+            nodes.append(node)
+            node = node.next
+        return nodes
+
+    def tolist(self):
+        nodes = []
+        node = self.node
+        while(node != None):
+            nodes.append(node.data)
+            node = node.next
+        return nodes
