@@ -87,8 +87,7 @@ class SingleLinkedList():
             if node.next != None:
                 node = node.next
             else:
-                node = None
-                break
+                raise IndexError('LinkedList index out of range')
         return node
 
     def get_last_node(self) -> Node:
