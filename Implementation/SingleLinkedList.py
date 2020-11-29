@@ -110,7 +110,10 @@ class SingleLinkedList():
     def add(self, data, index):
         node = self.get_node(index-1)
         node.next = Node(data=data, next=node.next)
-
+    def add_start(self,data):
+        node=self.get_node(0)
+        self.node=Node(data,node)
+        return None
     def __tolist(self):
         nodes = []
         node = self.node
