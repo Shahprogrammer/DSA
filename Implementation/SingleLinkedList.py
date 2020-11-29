@@ -66,7 +66,7 @@ class SingleLinkedList():
 
     """
 
-    def __init__(self, node: Union[Node, None]):
+    def __init__(self, node: Union[Node, None] = None):
         """
         Generates a Single Linked List
 
@@ -101,3 +101,7 @@ class SingleLinkedList():
         else:
             self.node = Node(data=data)
         return None
+
+    def add(self, data, index):
+        node = self.get_node(index-1)
+        node.next = Node(data=data, next=node.next)
