@@ -127,3 +127,9 @@ class SinglyLinkedList():
         a.next=None
     def delete_start(self):
         self.node=self.get_node(1)
+    @classmethod
+    def fromlist(cls,data:list):
+        node=cls()
+        for i in data:
+            node.append(i)
+        return node
