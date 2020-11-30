@@ -1,6 +1,4 @@
-import sys,pathlib
-sys.path.insert(1, str(pathlib.Path(__file__).resolve().parent.parent.parent))
-from Problems.SinglyLinkedList.Reverse import SinglyLinkedList as LinkedList
+from Reverse import SinglyLinkedList as LinkedList
 """
     Reverse a Linked List in groups of given size.
 

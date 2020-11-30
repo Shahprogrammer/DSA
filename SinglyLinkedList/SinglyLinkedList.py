@@ -11,9 +11,9 @@ class Node():
         """
         Generates a Node for Single Linked List
 
-        :param data: Value of the current node of Single Linked List
+        :param data: Value of the current node of Singly Linked List
         :type data: Any
-        :param next: Next Node of Single Linked List
+        :param next: Next Node of Singly Linked List
         :type next: Union[Node,None]
         """
         self._data = data
@@ -71,21 +71,21 @@ class SinglyLinkedList():
 
     def __init__(self, node: Union[Node, None] = None):
         """
-        Generates a Single Linked List
+        Generates a Singly Linked List
 
-        :param node: Node of the Single Linked List
+        :param node: Node of the Singly Linked List
         :type node: Union[Node,None]
         """
         self.node = node
 
     def __repr__(self) -> str:
-        return '<%s %r>' % (self.__class__.__name__, self.__tolist())
+        return '<%s %r>' % (self.__class__.__name__, self._tolist())
 
     def get_node(self, index) -> Union[Node, None]:
-        return self.__tolist()[index]
+        return self._tolist()[index]
 
     def get_last_node(self) -> Node:
-        return self.__tolist()[-1]
+        return self._tolist()[-1]
 
     def append(self, data):
         node = self.get_last_node()
@@ -104,7 +104,7 @@ class SinglyLinkedList():
         self.node = Node(data, node)
         return None
 
-    def __tolist(self):
+    def _tolist(self):
         nodes = []
         node = self.node
         while(node != None):
