@@ -8,7 +8,7 @@ sys.path.insert(1, str(pathlib.Path(__file__).resolve().parent.parent.parent))
 from Implementation.SinglyLinkedList import SinglyLinkedList as LinkedList
 
 class SinglyLinkedList(LinkedList):
-    def reverse(self)->LinkedList:
+    def reverse(self)->None:
         prev=None
         current=self.node
         while current != None:
