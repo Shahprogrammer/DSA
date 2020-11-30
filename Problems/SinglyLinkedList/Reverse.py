@@ -1,5 +1,5 @@
 """
-    Reverse the SingleLinkedList
+    Reverse the SinglyLinkedList
 
     https://www.geeksforgeeks.org/reverse-a-linked-list/
 """
